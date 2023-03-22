@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/merhaba', function () {
+    return ('merhaba');
+});
+
+
