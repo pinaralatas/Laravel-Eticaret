@@ -8,6 +8,6 @@ class AnasayfaController extends Controller
 {
     public function index(){
 
-    return view('anasayfa');
+    return view('anasayfa',['isim'=>'Pınar']);
     }
 }

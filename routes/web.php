@@ -3,10 +3,6 @@
 
 Route::get('/', 'AnasayfaController@index')->name('anasayfa');
 
-Route::get('/merhaba', function () {
-    return ('merhaba');
-});
-
-Route::get('/urun/{urunadi}',function ($urunadi){
-    return "Ürün adı: $urunadi";
-});
+Route::view('/kategori','kategori');
+Route::view('/urun','urun');
+Route::view('/sepet','sepet');
