@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title',config('app.name'))</title>
+    <title>@yield('title',config('app.name'))</title> {{--Diğer şablonlardan title adı değiştirilebilsin diye tanımladık  --}}
     @include('layouts.partials.head')
     @yield('head')
 </head>

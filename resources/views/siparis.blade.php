@@ -1,31 +1,24 @@
 @extends('layouts.sablon')
-@section('title','Sepet')
+@section('title','Sipariş Detayı')
 @section('content')
     <div class="container">
         <div class="bg-content">
-            <h2>Sepet</h2>
+            <h2>Sipariş (SP-00123)</h2>
             <table class="table table-bordererd table-hover">
                 <tr>
                     <th>Ürün</th>
                     <th>Tutar</th>
                     <th>Adet</th>
                     <th>Ara Toplam</th>
-                    <th>İşlem</th>
-                </tr>
-                <tr>
-                    <td colspan="5">Henüz sepette ürün yok</td>
+                    <th>Durum</th>
                 </tr>
                 <tr>
                     <td> <img src="http://lorempixel.com/120/100/food/2"> Ürün adı</td>
                     <td>18.99</td>
-                    <td>
-                        <a href="#" class="btn btn-xs btn-default">-</a>
-                        <span style="padding: 10px 20px">1</span>
-                        <a href="#" class="btn btn-xs btn-default">+</a>
-                    </td>
+                    <td>1</td>
                     <td>18.99</td>
                     <td>
-                        <a href="#">Sil</a>
+                        Sipariş alındı, <br> Onaylandı, <br> Kargoya verildi, <br> Bir sorun var. İletişime geçin!
                     </td>
                 </tr>
                 <tr>
@@ -35,11 +28,23 @@
                     <th>18.99</th>
                     <th></th>
                 </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Kargo</th>
+                    <th>Ücretsiz</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Sipariş Toplamı</th>
+                    <th>18.99</th>
+                    <th></th>
+                </tr>
+
             </table>
-            <div>
-                <a href="#" class="btn btn-info pull-left">Sepeti Boşalt</a>
-                <a href="#" class="btn btn-success pull-right btn-lg">Ödeme Yap</a>
-            </div>
         </div>
     </div>
 @endsection
+
