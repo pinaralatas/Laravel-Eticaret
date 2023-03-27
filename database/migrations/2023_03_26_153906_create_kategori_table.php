@@ -17,7 +17,11 @@ class CreateKategoriTable extends Migration
             $table->increments('id');
             $table->string('kategori_adi',30);
             $table->string('slug',40);
-            $table->timestamps(); //create date ve update date
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP')); //create date ve update date
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP'));
+
+            $table->softDeletes()->nullable();
+
         });
     }
 
