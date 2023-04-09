@@ -25,7 +25,7 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="http://lorempixel.com/640/400/food/1" alt="...">
+                            <img src="https://img-zenpirlanta.mncdn.com/resim/urun/parfum.php/zen-parfum/zen-pirlanta-zen-parfum-3001379381-PRF-ERT001SE-1677215951-1.jpg" alt="...">
                             <div class="carousel-caption">
                                 Slide 1
                             </div>
