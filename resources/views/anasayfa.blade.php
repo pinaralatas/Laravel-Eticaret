@@ -25,21 +25,21 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="https://img-zenpirlanta.mncdn.com/resim/urun/parfum.php/zen-parfum/zen-pirlanta-zen-parfum-3001379381-PRF-ERT001SE-1677215951-1.jpg" alt="...">
+                            <img src="/img/slider1.png" alt="...">
                             <div class="carousel-caption">
-                                Slide 1
+                                Land of Parfume
                             </div>
                         </div>
                         <div class="item">
-                            <img src="http://lorempixel.com/640/400/food/2" alt="...">
+                            <img src="/img/slider2.jpg" alt="...">
                             <div class="carousel-caption">
-                                Slide 2
+                                Land of Parfume
                             </div>
                         </div>
                         <div class="item">
-                            <img src="http://lorempixel.com/640/400/food/3" alt="...">
+                            <img src="/img/slider3.png" alt="...">
                             <div class="carousel-caption">
-                                Slide 3
+                                Land of Parfume
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="panel-heading">Günün Fırsatı</div>
                     <div class="panel-body">
                         <a href="#">
-                            <img src="http://lorempixel.com/400/485/food/1" class="img-responsive">
+                            <img src="/img/k_parfume1.jpg" class="img-responsive">
                         </a>
                     </div>
                 </div>
