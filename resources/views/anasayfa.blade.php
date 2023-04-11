@@ -57,7 +57,7 @@
                 <div class="panel panel-default" id="sidebar-product">
                     <div class="panel-heading">Günün Fırsatı</div>
                     <div class="panel-body">
-                        <a href="#">
+                        <a href="{{ route('urun',$urun_gunun_firsati->slug) }}">
                             <img src="/img/k_parfume1.jpg" class="img-responsive">
                         </a>
                     </div>
@@ -71,26 +71,13 @@
                 <div class="panel-heading">Öne Çıkan Ürünler</div>
                 <div class="panel-body">
                     <div class="row">
+                        @foreach($urunler_one_cikan as $urun_detay)
                         <div class="col-md-3 product">
-                            <a href="#"><img src="http://lorempixel.com/400/400/food/1"></a>
-                            <p><a href="#">Ürün adı</a></p>
-                            <p class="price">129 ₺</p>
+                            <a href="{{route('urun',$urun_detay->urun->slug)}}"><img src="/img/k_parfume1"></a>
+                            <p><a href="{{route('urun',$urun_detay->urun->slug)}}">{{$urun_detay->urun->urun_adi}}</a></p>
+                            <p class="price">{{$urun_detay->urun->fiyat}}</p>
                         </div>
-                        <div class="col-md-3 product">
-                            <a href="#"><img src="http://lorempixel.com/400/400/food/2"></a>
-                            <p><a href="#">Ürün adı</a></p>
-                            <p class="price">129 ₺</p>
-                        </div>
-                        <div class="col-md-3 product">
-                            <a href="#"><img src="http://lorempixel.com/400/400/food/3"></a>
-                            <p><a href="#">Ürün adı</a></p>
-                            <p class="price">129 ₺</p>
-                        </div>
-                        <div class="col-md-3 product">
-                            <a href="#"><img src="http://lorempixel.com/400/400/food/4"></a>
-                            <p><a href="#">Ürün adı</a></p>
-                            <p class="price">129 ₺</p>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
