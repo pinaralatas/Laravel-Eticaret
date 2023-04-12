@@ -13,6 +13,7 @@ Route::get('/odeme','OdemeController@index')->name('odeme');
 Route::get('/siparisler','SiparisController@index')->name('siparisler');
 Route::get('/siparisler/{id}','SiparisController@detay')->name('siparis');
 
+Route::post('/ara','UrunController@ara')->name('urun_ara');
 
 
 Route::group(['prefix'=>'kullanici'],function (){
