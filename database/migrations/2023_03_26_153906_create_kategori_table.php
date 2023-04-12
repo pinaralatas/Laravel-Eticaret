@@ -20,7 +20,7 @@ class CreateKategoriTable extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP')); //create date ve update date
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP'));
 
-            $table->timestamps('deleted_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
         });
     }

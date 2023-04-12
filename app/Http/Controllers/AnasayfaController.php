@@ -25,19 +25,19 @@ class AnasayfaController extends Controller
         ->where('urun_detay.goster_one_cikan',1)
         ->orderBy('created_at','desc')
         ->first()
-        ->take(4)->get();
+        ->take(1)->get();
     $urunler_cok_satan=Urun::select('urun.*')
         ->join('urun_detay','urun_detay.urun_id','urun.id')
         ->where('urun_detay.goster_cok_satan',1)
         ->orderBy('created_at','desc')
         ->first()
-        ->take(4)->get();
+        ->take(1)->get();
     $urunler_indirimli=Urun::select('urun.*')
         ->join('urun_detay','urun_detay.urun_id','urun.id')
         ->where('urun_detay.goster_indirimli',1)
         ->orderBy('created_at','desc')
         ->first()
-        ->take(4)->get();
+        ->take(1)->get();
 
     return view('anasayfa',compact('kategoriler','urun_gunun_firsati','urunler_one_cikan','urunler_cok_satan','urunler_indirimli'));
     }

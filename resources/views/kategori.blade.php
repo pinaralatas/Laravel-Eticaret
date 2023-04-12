@@ -40,8 +40,8 @@
         <div class="col-md-9">
             <div class="products bg-content">
                 Sırala
-                <a href="#" class="btn btn-default">Çok Satanlar</a>
-                <a href="#" class="btn btn-default">Yeni Ürünler</a>
+                <a href="?order=coksatanlar" class="btn btn-default">Çok Satanlar</a>
+                <a href="?order=yeni" class="btn btn-default">Yeni Ürünler</a>
                 <hr>
                 <div class="row">
                     @foreach($urunler as $urun)
@@ -53,6 +53,8 @@
                     </div>
                     @endforeach
                 </div>
+                <!-- Aşağıdaki kodda,eğer adres satırında order'la ilgili bir query string varsa bu değeri bağlantılara ekler. -->
+                {{request()->has('order') ? $urunler->appends(['order'=>request('order')]) -> links() : $urunler->links()}}
             </div>
         </div>
     </div>
