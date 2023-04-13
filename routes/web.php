@@ -8,7 +8,12 @@ Route::get('/kategori/{slug_kategoriadi}','KategoriController@index')->name('kat
 Route::get('/urun/{slug_urunadi}','UrunController@index')->name('urun');
 Route::post('/ara','UrunController@ara')->name('urun_ara');
 Route::get('/ara','UrunController@ara')->name('urun_ara');
-Route::get('/sepet','SepetController@index')->name('sepet')->middleware('auth');
+
+Route::group(['prefix' => 'sepet'], function () {
+    Route::get('/', 'SepetController@index')->name('sepet');
+    Route::post('/ekle', 'SepetController@ekle')->name('sepet.ekle');
+
+});
 
 
 //Aşağıdaki middleware tanımıyla fonksiyon içindeki bilgileri sadece giriş yapan kullanıcılar görebilecek.
