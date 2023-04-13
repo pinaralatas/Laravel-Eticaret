@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\KullaniciKayitMail;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Kullanici;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class KullaniciController extends Controller
@@ -14,7 +14,24 @@ class KullaniciController extends Controller
     {
         return view('kullanici.oturumac');
     }
+    public function giris()
+    {
+        $this->validate(request(), [
+            'email' => 'required|email',
+            'sifre' => 'required'
+        ]);
 
+        if(auth()->attempt(['email'=>request('email'),'password'=>request('sifre')],request()->has('benihatirla')))
+        {
+           request()->session()->regenerate();
+           return redirect()->intended('/');
+
+        }
+        else{
+            $errors=['email'=>'Hatalı giriş'];
+            return back()->withErrors($errors);
+        }
+    }
     public function kaydol_form()
     {
         return view('kullanici.kaydol');
@@ -43,6 +60,13 @@ class KullaniciController extends Controller
         auth()->login($kullanici);
         return redirect()->route('anasayfa');
 
+    }
+
+    public function oturumukapat(){
+        auth()->logout();
+        request()->session()->flush();
+        request()->session()->regenerate();
+        return redirect()->route('anasayfa');
     }
 
 
