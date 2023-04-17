@@ -20,4 +20,16 @@ class SepetController extends Controller
 
         return redirect()->route('sepet');
     }
+
+    public function kaldir($rowid){
+
+        Cart::remove($rowid);
+        return redirect()->route('sepet');
+    }
+
+    public function bosalt(){
+
+        Cart::destroy();
+        return redirect()->route('sepet');
+    }
 }

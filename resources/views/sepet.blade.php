@@ -26,7 +26,15 @@
                              <a href="{{route('urun',str_slug($urunCartItem->name))}}">
                                 {{ $urunCartItem->name }}
                              </a>
+
+                              <!-- SEPETTEN ÜRÜN KALDIRMA-->
+                            <form action="{{route('sepet.kaldir',$urunCartItem->rowId)}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <input type="submit" class="btn btn-danger btn-xs" value="Sepetten Kaldır">
+                            </form>
                         </td>
+
                         <td>{{ $urunCartItem->price }} ₺</td>
 
                         <td>
@@ -54,9 +62,16 @@
                 </tr>
             </table>
             <div>
-                <a href="#" class="btn btn-info pull-left">Sepeti Boşalt</a>
+                <!-- SEPETİ BOŞALTMA -->
+                <form action="{{route('sepet.bosalt',$urunCartItem->rowId)}}" method="post">
+                    {{csrf_field()}}
+                    {{method_field('DELETE')}}
+                    <input type="submit" class="btn btn-info pull-left" value="Sepeti Boşalt">
+                </form>
+
                 <a href="#" class="btn btn-success pull-right btn-lg">Ödeme Yap</a>
             </div>
+
             @else <!-- Sepette ürün yoksa çalıştırır. -->
                 <p>Sepetinizde ürün yok!</p>
             @endif
