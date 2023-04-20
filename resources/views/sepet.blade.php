@@ -38,9 +38,9 @@
                         <td>{{ $urunCartItem->price }} ₺</td>
 
                         <td>
-                            <a href="#" class="btn btn-xs btn-default">-</a>
+                            <a href="#" class="btn btn-xs btn-default urun-adet-azalt" data-id="{{$urunCartItem->rowId}}" data-adet="{{$urunCartItem->qty-1}}">-</a>
                             <span style="padding: 10px 20px">{{ $urunCartItem->qty }}</span>
-                            <a href="#" class="btn btn-xs btn-default">+</a>
+                            <a href="#" class="btn btn-xs btn-default urun-adet-artir" data-id="{{$urunCartItem->rowId}}" data-adet="{{$urunCartItem->qty+1}}">+</a>
                         </td>
 
                         <td class="text-right">

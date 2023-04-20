@@ -775,6 +775,27 @@ module.exports = __webpack_require__(47);
 
 __webpack_require__(10);
 
+/*Sipariş sayısının arttırılıp azaltılması*/
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+$('.urun-adet-artir , .urun-adet-azalt').on('click', function () {
+    var id = $(this).attr('data-id');
+    var adet = $(this).attr('data-adet');
+    $.ajax({
+        type: 'PATCH',
+        url: '/sepet/guncelle/' + id,
+        data: { adet: adet },
+        success: function success(result) {
+            window.location.href = '/sepet';
+        }
+
+    });
+});
+
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
