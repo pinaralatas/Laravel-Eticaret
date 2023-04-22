@@ -1,5 +1,11 @@
 <?php
-
+Route::group(['prefix'=>'yonetim','namespace'=>'Yonetim'],function (){
+    Route::get('/',function (){
+        return"vfv";
+    });
+        Route::get('/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
+    Route::get('/anasayfa','AnasayfaController@index')->name('yonetim.anasayfa');
+});
 
 Route::get('/', 'AnasayfaController@index')->name('anasayfa');
 
@@ -18,10 +24,12 @@ Route::group(['prefix' => 'sepet'], function () {
     Route::patch('/guncelle/{rowid}', 'SepetController@guncelle')->name('sepet.guncelle');
 });
 
+Route::get('/odeme','OdemeController@index')->name('odeme');
+Route::post('/odeme','OdemeController@odemeyap')->name('odemeyap');
 
 //Aşağıdaki middleware tanımıyla fonksiyon içindeki bilgileri sadece giriş yapan kullanıcılar görebilecek.
 Route::group(['middleware'=>'auth'],function (){
-Route::get('/odeme','OdemeController@index')->name('odeme');
+
 Route::get('/siparisler','SiparisController@index')->name('siparisler');
 Route::get('/siparisler/{id}','SiparisController@detay')->name('siparis');
 });

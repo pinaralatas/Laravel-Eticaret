@@ -30,7 +30,12 @@ class KullaniciController extends Controller
         {
            request()->session()->regenerate();
 
-           $aktif_sepet_id=Sepet::firstOrCreate(['kullanici_id'=>auth()->id()])->id;
+           $aktif_sepet_id=Sepet::aktif_sepet_id();
+            if (is_null($aktif_sepet_id)) {
+                $aktif_sepet = Sepet::create(['kullanici_id' => auth()->id()]);
+                $aktif_sepet_id = $aktif_sepet->id;
+            }
+
            session()->put('aktif_sepet_id',$aktif_sepet_id);
 
            if(Cart::count()>0){
