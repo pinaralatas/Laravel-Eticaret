@@ -1,10 +1,17 @@
 <?php
 Route::group(['prefix'=>'yonetim','namespace'=>'Yonetim'],function (){
-    Route::get('/',function (){
-        return"vfv";
-    });
-        Route::get('/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
+    Route::redirect('/','/yonetim/oturumac');
+    Route::match(['get','post'],'/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
     Route::get('/anasayfa','AnasayfaController@index')->name('yonetim.anasayfa');
+    Route::get('/oturumkapat','KullaniciController@oturumkapat')->name('yonetim.oturumkapat');
+
+    Route::group(['prefix' => 'kullanici'], function () {
+        Route::match(['get', 'post'], '/', 'KullaniciController@index')->name('yonetim.kullanici');
+        Route::get('/yeni', 'KullaniciController@form')->name('yonetim.kullanici.yeni');
+        Route::get('/duzenle/{id}', 'KullaniciController@form')->name('yonetim.kullanici.duzenle');
+        Route::post('/kaydet/{id?}', 'KullaniciController@kaydet')->name('yonetim.kullanici.kaydet');
+        Route::get('/sil/{id}', 'KullaniciController@sil')->name('yonetim.kullanici.sil');
+    });
 });
 
 Route::get('/', 'AnasayfaController@index')->name('anasayfa');

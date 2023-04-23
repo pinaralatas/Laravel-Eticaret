@@ -11,7 +11,9 @@
 
 <body>
 <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" action="{{route('yonetim.oturumac')}}" method="post">
+        {{csrf_field()}}
+
         <img src="/img/logo2.png" class="logo"  style="width: 100px; height:40px;">
         <label for="email" class="sr-only">Email</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>

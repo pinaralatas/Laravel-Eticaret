@@ -18,15 +18,15 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{{route('yonetim.anasayfa')}}">Giriş</a>
                 </li>
                 <li>
-                    <a href="#">Settings</a>
+                    <a href="#">Ayarlar</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -35,7 +35,7 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Logout</a>
+                            <a href="{{route('yonetim.oturumkapat')}}">Çıkış</a>
                         </li>
                     </ul>
                 </li>
