@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\Models\Kullanici;
 use App\Models\KullaniciDetay;
+use Hash;
 
 class KullaniciController extends Controller
 {
@@ -88,9 +89,16 @@ class KullaniciController extends Controller
         );
 
         return redirect()
-            ->route('yonetim.kullanici.duzenle', $entry->id)
-            ->with('mesaj', ($id > 0 ? 'Güncellendi' : 'Kaydedildi'))
-            ->with('mesaj_tur', 'success');
+            ->route('yonetim.kullanici.duzenle', $entry->id);
+
+    }
+
+    public function sil($id)
+    {
+        Kullanici::destroy($id);
+
+        return redirect()
+            ->route('yonetim.kullanici');
     }
 
 }
