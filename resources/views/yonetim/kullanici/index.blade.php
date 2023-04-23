@@ -1,14 +1,24 @@
 @extends('yonetim.layouts.sablon')
 @section('title', 'Kullanıcı Yönetimi')
 @section('content')
-    <h1 class="page-header">Kullanıcı Yönetimi</h1>
 
-    <h1 class="sub-header">
+    <h3 class="sub-header">Kullanıcı Listesi</h3>
+    <div class="well">
         <div class="btn-group pull-right">
-            <a href="{{route('yonetim.kullanici.yeni')}}" class="btn btn-primary">Ekle</a>
+            <a href="{{ route('yonetim.kullanici.yeni') }}" class="btn btn-primary">Ekle</a>
         </div>
-        Kullanıcı Listesi
-    </h1>
+        <form method="post" action="{{ route('yonetim.kullanici') }}" class="form-inline">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label for="aranan">Ara</label>
+                <input type="text" class="form-control form-control-sm" name="aranan" id="aranan" placeholder="Ad, Email Ara..." value="{{ old('aranan') }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Ara</button>
+            <a href="{{ route('yonetim.kullanici') }}" class="btn btn-primary">Temizle</a>
+        </form>
+    </div>
+
+
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
@@ -56,5 +66,6 @@
             @endforeach
             </tbody>
         </table>
+        {{ $list->appends('aranan',old('aranan'))->links() }}
     </div>
 @endsection
