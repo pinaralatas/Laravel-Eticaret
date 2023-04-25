@@ -1,20 +1,20 @@
 @extends('yonetim.layouts.sablon')
-@section('title', 'Kategori Yönetimi')
+@section('title', 'Ürün Yönetimi')
 @section('content')
 
-    <h3 class="sub-header">Kategori Listesi</h3>
+    <h3 class="sub-header">Ürün Listesi</h3>
     <div class="well">
         <div class="btn-group pull-right">
-            <a href="{{ route('yonetim.kategori.yeni') }}" class="btn btn-primary">Ekle</a>
+            <a href="{{ route('yonetim.urun.yeni') }}" class="btn btn-primary">Ekle</a>
         </div>
-        <form method="post" action="{{ route('yonetim.kategori') }}" class="form-inline">
+        <form method="post" action="{{ route('yonetim.urun') }}" class="form-inline">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="aranan">Ara</label>
-                <input type="text" class="form-control form-control-sm" name="aranan" id="aranan" placeholder="Kategori Ara..." value="{{ old('aranan') }}">
+                <input type="text" class="form-control form-control-sm" name="aranan" id="aranan" placeholder="Ürün Ara..." value="{{ old('aranan') }}">
             </div>
             <button type="submit" class="btn btn-primary">Ara</button>
-            <a href="{{ route('yonetim.kategori') }}" class="btn btn-primary">Temizle</a>
+            <a href="{{ route('yonetim.urun') }}" class="btn btn-primary">Temizle</a>
         </form>
     </div>
 
@@ -25,7 +25,8 @@
             <tr>
                 <th>#</th>
                 <th>Slug</th>
-                <th>Kategori Adi</th>
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
                 <th>Kayıt Tarihi</th>
                 <th></th>
             </tr>
@@ -36,13 +37,14 @@
                 <td>{{$entry->id}}</td>
                 <td>{{$entry->slug}}</td>
                 <td>{{$entry->kategori_adi}}</td>
+                <td>{{$entry->fiyat}}</td>
                 <td>{{$entry->created_at}}</td>
 
                 <td style="width: 100px">
-                    <a href="{{route('yonetim.kategori.duzenle',$entry->id)}}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Düzenle">
+                    <a href="{{route('yonetim.urun.duzenle',$entry->id)}}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Düzenle">
                         <span class="fa fa-pencil"></span>
                     </a>
-                    <a href="{{route('yonetim.kategori.sil',$entry->id)}}" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Emin misiniz?')">
+                    <a href="{{route('yonetim.urun.sil',$entry->id)}}" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Emin misiniz?')">
                         <span class="fa fa-trash"></span>
                     </a>
                 </td>
