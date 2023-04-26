@@ -1,4 +1,4 @@
-$color1: #f4645f;
+$color1: rgba(138, 6, 51, 0.72);
 $color2: #428bca;
 
 body {
@@ -20,7 +20,7 @@ body {
   z-index: 1000;
   padding: 20px;
   overflow-x: hidden; overflow-y: auto;
-  background-color: #f5f5f5;
+  background-color: rgba(175, 117, 136, 0.24);
   border-right: 1px solid #eee;
 
   .list-group-item {
@@ -103,12 +103,12 @@ body {
     border-color: $color1;
   }
   &:hover {
-    background-color: #e74430 !important;
-    border-color: #e74430 !important;
+    background-color: rgba(187, 8, 71, 0.72) !important;
+    border-color:rgba(187, 8, 71, 0.72) !important;
     color: #fff !important;
     .badge {
       background-color: #fff;
-      color: #e74430
+      color: #e74430;
     }
   }
 }
@@ -118,8 +118,8 @@ body {
   border-color: $color1;
 
   &:hover, &:active, &:focus {
-    background-color: #e74430 !important;
-    border-color: #e74430 !important;
+    background-color: rgba(187, 8, 71, 0.72) !important;
+    border-color: rgba(187, 8, 71, 0.72) !important;
     color: #fff !important;
   }
 }
@@ -135,4 +135,8 @@ body {
 
 .navbar-toggle {
   margin-left: 15px;
+}
+
+.checkbox label{
+margin-right: 20px;
 }

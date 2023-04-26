@@ -20,7 +20,7 @@ body {
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #f5f5f5;
+  background-color: rgba(175, 117, 136, 0.24);
   border-right: 1px solid #eee;
 }
 
@@ -100,13 +100,13 @@ body {
 
 .list-group-item.active,
 .list-group-item.active:focus {
-  background-color: #f4645f;
-  border-color: #f4645f;
+  background-color: rgba(138, 6, 51, 0.72);
+  border-color: rgba(138, 6, 51, 0.72);
 }
 
 .list-group-item:hover {
-  background-color: #e74430 !important;
-  border-color: #e74430 !important;
+  background-color: rgba(187, 8, 71, 0.72) !important;
+  border-color: rgba(187, 8, 71, 0.72) !important;
   color: #fff !important;
 }
 
@@ -116,29 +116,33 @@ body {
 }
 
 .btn-primary {
-  background-color: #f4645f;
-  border-color: #f4645f;
+  background-color: rgba(138, 6, 51, 0.72);
+  border-color: rgba(138, 6, 51, 0.72);
 }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: #e74430 !important;
-  border-color: #e74430 !important;
+  background-color: rgba(187, 8, 71, 0.72) !important;
+  border-color: rgba(187, 8, 71, 0.72) !important;
   color: #fff !important;
 }
 
 .panel-primary {
-  border-color: #f4645f;
+  border-color: rgba(138, 6, 51, 0.72);
 }
 
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #f4645f;
-  border-color: #f4645f;
+  background-color: rgba(138, 6, 51, 0.72);
+  border-color: rgba(138, 6, 51, 0.72);
 }
 
 .navbar-toggle {
   margin-left: 15px;
+}
+
+.checkbox label {
+  margin-right: 20px;
 }
 

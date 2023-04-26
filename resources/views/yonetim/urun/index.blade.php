@@ -36,7 +36,7 @@
             <tr>
                 <td>{{$entry->id}}</td>
                 <td>{{$entry->slug}}</td>
-                <td>{{$entry->kategori_adi}}</td>
+                <td>{{$entry->urun_adi}}</td>
                 <td>{{$entry->fiyat}}</td>
                 <td>{{$entry->created_at}}</td>
 
