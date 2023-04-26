@@ -24,6 +24,7 @@
             <thead class="thead-dark">
             <tr>
                 <th>#</th>
+                <th>Resim</th>
                 <th>Slug</th>
                 <th>Ürün Adı</th>
                 <th>Fiyatı</th>
@@ -35,6 +36,9 @@
             @foreach($list as $entry)
             <tr>
                 <td>{{$entry->id}}</td>
+                <td class="text-center">
+                    <img src="{{ $entry->detay->urun_resmi!=null ? asset('uploads/urunler/' . $entry->detay->urun_resmi) : 'http://via.placeholder.com/120x120?text=UrunResmi' }}" style="width: 120px;">
+                </td>
                 <td>{{$entry->slug}}</td>
                 <td>{{$entry->urun_adi}}</td>
                 <td>{{$entry->fiyat}}</td>

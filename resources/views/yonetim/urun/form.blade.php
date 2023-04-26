@@ -2,7 +2,7 @@
 @section('title', 'Ürün Yönetimi')
 @section('content')
 
-    <form method="post" action="{{route('yonetim.urun.kaydet',@$entry->id)}}">
+    <form method="post" action="{{route('yonetim.urun.kaydet',@$entry->id)}}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <h3 class="sub-header">
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="aciklama">Açıklama</label>
-                    <textarea class="form-control" id="aciklama" name="aciklama" placeholder="Açıklama">{{ old('urun_adi', $entry->urun_adi) }}</textarea>
+                    <textarea class="form-control" id="aciklama" name="aciklama" placeholder="Açıklama">{{ old('aciklama', $entry->aciklama) }}</textarea>
                 </div>
             </div>
         </div>
@@ -62,6 +62,27 @@
             </label>
         </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="kategoriler">Kategoriler</label>
+                    <select name="kategoriler[]" class="form-control" id="kategoriler" multiple>
+                        @foreach($kategoriler as $kategori)
+                            <option value="{{ $kategori->id }}" {{ collect(old('kategoriler', $urun_kategorileri))->contains($kategori->id) ? 'selected': '' }}>{{ $kategori->kategori_adi }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @if ($entry->detay->urun_resmi!=null)
+                <img src="/uploads/urunler/{{ $entry->detay->urun_resmi }}" style="height: 100px; margin-right: 20px;" class="thumbnail pull-left">
+            @endif
+            <label for="urun_resmi">Ürün Resmi</label>
+            <input type="file" id="urun_resmi" name="urun_resmi">
+        </div>
+
 
             <button type="submit" class="btn btn-primary">
                 {{ $entry->id > 0 ? "Güncelle" : "Kaydet" }}
@@ -69,4 +90,33 @@
 
     </form>
 
+@endsection
+
+@section('head')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+@endsection
+
+@section('footer')
+    <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.9.2/plugins/autogrow/plugin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(function () {
+            $('#kategoriler').select2({
+                placeholder: 'Lütfen kategori seçiniz'
+            });
+            var options = {
+                uiColor: '#ce9eaa',
+                language: 'tr',
+                extraPlugins: 'autogrow',
+                autoGrow_minHeight: 250,
+                autoGrow_maxHeight: 600,
+                filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+                filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+                filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+                filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+            };
+            CKEDITOR.replace('aciklama', options);
+        });
+    </script>
 @endsection

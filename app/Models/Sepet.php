@@ -42,4 +42,8 @@ class Sepet extends Model
             ->where('sepet_id', $this->id)
             ->sum('adet');
     }
+
+    public function kullanici(){
+        return $this->belongsTo('App\Models\Kullanici');
+    }
 }
