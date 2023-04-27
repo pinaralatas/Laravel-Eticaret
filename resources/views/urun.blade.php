@@ -45,7 +45,7 @@
                     <li role="presentation"><a href="#t2" data-toggle="tab">Yorumlar</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="t1">{{$urun->aciklama}}</div>
+                    <div role="tabpanel" class="tab-pane active" id="t1">{{ strip_tags($urun->aciklama) }}</div>
                     <div role="tabpanel" class="tab-pane" id="t2">Henüz yorum yapılmadı.</div>
                 </div>
             </div>
