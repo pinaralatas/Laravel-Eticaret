@@ -20,23 +20,7 @@
                             </a>
                         @endforeach
                     </div>
-                    <h3>Fiyat Aralığı</h3>
-                    <form>
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> 100-200
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> 200-300
-                                </label>
-                            </div>
-                        </div>
-                    </form>
+
                 </div>
             </div>
         </div>
@@ -53,8 +37,14 @@
                             <img src="{{ $urun->detay->urun_resmi!=null ? asset('uploads/urunler/' . $urun->detay->urun_resmi) : 'http://via.placeholder.com/400x400?text=UrunResmi' }}"></a>
                         <p><a href="{{ route('urun',$urun->slug) }}">{{$urun->urun_adi}}</a></p>
                         <p class="price">{{$urun->fiyat}} </p>
-                        <p><a href="#" class="btn btn-theme">Sepete Ekle</a></p>
+                        <form action="{{ route('sepet.ekle')}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="id" value="{{$urun->id}}">
+                            <input type="submit" class="btn btn-theme" value="Sepete Ekle">
+                        </form>
+                        <br>
                     </div>
+
                     @endforeach
                 </div>
                 <!-- Aşağıdaki kodda,eğer adres satırında order'la ilgili bir query string varsa bu değeri bağlantılara ekler. -->

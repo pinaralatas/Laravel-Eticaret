@@ -17,16 +17,16 @@ class KategoriController extends Controller
             $urunler = $kategori->urunler()
                 ->join('urun_detay', 'urun_detay.urun_id', 'urun.id')
                 ->orderBy('urun_detay.goster_cok_satan', 'desc')
-                ->paginate(6);
+                ->paginate(8);
 
         } else if ($order == 'yeni') {
             $urunler = $kategori->urunler()
-                ->orderByDesc('guncelleme_tarihi')
-                ->paginate(6);
+                ->orderByDesc('created_at')
+                ->paginate(8);
         } else {
             $urunler = $kategori->urunler()
                 ->orderByDesc('created_at')
-                ->paginate(6);
+                ->paginate(8);
         }
 
         return view('kategori',compact('kategori','urunler','kategoriler'));

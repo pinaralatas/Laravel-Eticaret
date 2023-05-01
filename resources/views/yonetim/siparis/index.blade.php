@@ -1,7 +1,6 @@
 @extends('yonetim.layouts.sablon')
 @section('title', 'Sipariş Yönetimi')
 @section('content')
-    <h1 class="page-header">Sipariş Yönetimi</h1>
 
     <h3 class="sub-header">Sipariş Listesi</h3>
     <div class="well">

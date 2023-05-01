@@ -12,9 +12,9 @@
         <div class="bg-content">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="http://lorempixel.com/400/200/food/1">
+                    <img src="{{ $urun->detay->urun_resmi!=null ? asset('uploads/urunler/' . $urun->detay->urun_resmi) : 'http://via.placeholder.com/400x400?text=UrunResmi' }}" style="width:400px">
                     <hr>
-                    <div class="row">
+                   <!-- <div class="row">
                         <div class="col-xs-3">
                             <a href="#" class="thumbnail"><img src="http://lorempixel.com/60/60/food/2"></a>
                         </div>
@@ -24,7 +24,7 @@
                         <div class="col-xs-3">
                             <a href="#" class="thumbnail"><img src="http://lorempixel.com/60/60/food/4"></a>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-md-7">
                     <h1>{{$urun->urun_adi}}</h1>

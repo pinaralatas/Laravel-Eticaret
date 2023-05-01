@@ -13,12 +13,12 @@
                     <th>Adet Fiyatı</th>
                     <th>Adet</th>
                     <th>Tutar</th>
-                </tr>
+                </TR>
 
                 @foreach(Cart::content() as $urunCartItem)
                     <tr>
                         <td style="width: 120px;">
-                            <a href="{{route('urun',str_slug($urunCartItem->name))}}">
+                            <a href="{{ route('urun', $urunCartItem->options->slug) }}">
                                 <img src="http://via.placeholder.com/120x100?text=UrunResmi">
                             </a>
                         </td>
