@@ -13,9 +13,12 @@
                 <div class="panel-body">
                     <h3>Alt Kategoriler</h3>
                     <div class="list-group categories">
-                        <a href="{{route('anasayfa')}}" class="list-group-item"><i class="fa fa-television"></i> Anasayfa</a>
-                        <a href="{{route('anasayfa')}}" class="list-group-item"><i class="fa fa-television"></i> Anasayfa</a>
-                        <a href="{{route('anasayfa')}}" class="list-group-item"><i class="fa fa-television"></i> Anasayfa</a>
+                        @foreach($kategoriler as $kategori)
+                            <a href="{{ route('kategori',$kategori->slug)  }} " class="list-group-item">
+                                <i class="fa fa-arrow-circle-o-right"></i>
+                                {{$kategori->kategori_adi}}
+                            </a>
+                        @endforeach
                     </div>
                     <h3>Fiyat Aralığı</h3>
                     <form>

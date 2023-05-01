@@ -8,6 +8,7 @@ class KategoriController extends Controller
 {
     public function index($slug_kategoriadi)
     {
+        $kategoriler=Kategori::all();
         $kategori=Kategori::where('slug', $slug_kategoriadi)->firstOrFail();
 
         $order = request('order');
@@ -28,6 +29,6 @@ class KategoriController extends Controller
                 ->paginate(6);
         }
 
-        return view('kategori',compact('kategori','urunler'));
+        return view('kategori',compact('kategori','urunler','kategoriler'));
     }
 }
