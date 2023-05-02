@@ -23,7 +23,7 @@
                             </a>
                         </td>
                         <td>
-                             <a href="{{route('urun',str_slug($urunCartItem->name))}}">
+                             <a href="{{route('urun',$urunCartItem->options->slug)}}">
                                 {{ $urunCartItem->name }}
                              </a>
 

@@ -13,20 +13,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Land Of Parfume / Yönetici</a>
+            <a class="navbar-brand" style="color: #dee2e6" href="#">Land Of Parfume / Yönetici</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="{{route('yonetim.anasayfa')}}">Giriş</a>
                 </li>
-                <li>
-                    <a href="#">Ayarlar</a>
-                </li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil
+                    <a href="#" class="dropdown-toggle" style="margin-right: 5px" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-fw fa-user"></span>
+                        Profil
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

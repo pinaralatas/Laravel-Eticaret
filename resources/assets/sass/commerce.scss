@@ -1,4 +1,4 @@
-$theme-color1: #e52d04;
+$theme-color1: #650a41;
 html {
   font-size: 16px;
 }
@@ -18,8 +18,12 @@ h1 {
 }
 
 a {
-  color: #333;
+  color: #000000;
 }
+#navbar-collapse1{
+    background-color: #990051;
+}
+
 
 #commerce {
     background-color: #f0f0f0;
@@ -42,20 +46,28 @@ a {
         width: 270px;
 
         img {
-            height: 30px;
-            margin-top: -6px;
+            height: 45px;
+            margin-top: -13px;
         }
+    }
+
+    .thumbnail img {
+        height: 200px;
+        transition: transform 0.3s;
+    }
+    .thumbnail:hover img {
+        transform: scale(1.05);
     }
 
     .panel-theme {
         border-color: #ddd;
 
         .panel-heading {
-            color: #333;
+            color: #000000;
             font-weight: 600;
-            border-color: #ddd;
-            border-top: 2px solid $theme-color1;
-            background: linear-gradient(to bottom, #fff 0%, #dfdfdf 100%);
+            border-color: rgba(91, 3, 30, 0.53);
+            border-top: 2px solid #fafafa;
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
         }
     }
 
@@ -74,7 +86,7 @@ a {
     }
 
     .btn-theme {
-        background-color: $theme-color1;
+        background-color:#540636;
         color: #fff;
         &:hover {
             filter: contrast(90%);
@@ -82,7 +94,7 @@ a {
     }
 
     #navbar-search {
-        width: 400px;
+        width: 300px;
     }
 
     .carousel {
@@ -157,7 +169,8 @@ a {
     }
 
     footer {
-        background-color: #fff;
+        color: #dddddd;
+        background-color: $theme-color1;
         padding: 50px;
         margin-top: 20px;
     }

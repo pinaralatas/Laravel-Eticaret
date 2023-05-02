@@ -17,7 +17,11 @@ h1 {
 }
 
 a {
-  color: #333;
+  color: #000000;
+}
+
+#navbar-collapse1 {
+  background-color: #990051;
 }
 
 #commerce {
@@ -43,8 +47,21 @@ a {
 }
 
 #commerce .navbar-brand img {
-  height: 30px;
-  margin-top: -6px;
+  height: 45px;
+  margin-top: -13px;
+}
+
+#commerce .thumbnail img {
+  height: 200px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#commerce .thumbnail:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #commerce .panel-theme {
@@ -52,12 +69,12 @@ a {
 }
 
 #commerce .panel-theme .panel-heading {
-  color: #333;
+  color: #000000;
   font-weight: 600;
-  border-color: #ddd;
-  border-top: 2px solid #e52d04;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dfdfdf));
-  background: linear-gradient(to bottom, #fff 0%, #dfdfdf 100%);
+  border-color: rgba(91, 3, 30, 0.53);
+  border-top: 2px solid #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
 }
 
 #commerce .panel-default h3 {
@@ -68,12 +85,12 @@ a {
 
 #commerce .badge-theme {
   font-weight: 400;
-  background-color: #e52d04;
+  background-color: #650a41;
   margin-top: -15px;
 }
 
 #commerce .btn-theme {
-  background-color: #e52d04;
+  background-color: #540636;
   color: #fff;
 }
 
@@ -83,7 +100,7 @@ a {
 }
 
 #commerce #navbar-search {
-  width: 400px;
+  width: 300px;
 }
 
 #commerce .carousel {
@@ -142,7 +159,7 @@ a {
   font-weight: 600;
   border-bottom: inherit;
   margin-top: 3px;
-  border-top: 2px solid #e52d04;
+  border-top: 2px solid #650a41;
   background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(#dfdfdf));
   background: linear-gradient(to top, #fff 0%, #dfdfdf 100%);
 }
@@ -163,7 +180,8 @@ a {
 }
 
 #commerce footer {
-  background-color: #fff;
+  color: #dddddd;
+  background-color: #650a41;
   padding: 50px;
   margin-top: 20px;
 }

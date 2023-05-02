@@ -18,7 +18,7 @@
                     @foreach($siparisler as $siparis)
                         <tr>
                             <td>LP-{{ $siparis->id }}</td>
-                            <td>{{ $siparis->siparis_tutari * ((100+config('cart.tax'))/100) }}</td>
+                            <td>{{ $siparis->siparis_tutari * ((100+config('cart.tax'))/100) }}₺</td>
                             <td>{{ $siparis->sepet->sepet_urun_adet() }}</td>
                             <td>{{ $siparis->durum }}</td>
                             <td><a href="{{ route('siparis', $siparis->id) }}" class="btn btn-sm btn-success">Detay</a></td>

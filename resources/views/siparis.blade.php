@@ -27,12 +27,13 @@
                                 {{ $sepet_urun->urun->urun_adi }}
                             </a>
                         </td>
-                        <td>{{ $sepet_urun->fiyati }} ₺</td>
+                        <td>{{ $sepet_urun->fiyat }} ₺</td>
                         <td>{{ $sepet_urun->adet }}</td>
-                        <td>{{ $sepet_urun->fiyati * $sepet_urun->adet }} ₺</td>
-                        <td>{{ $sepet_urun->durum }}</td>
+                        <td>{{ $sepet_urun->fiyat * $sepet_urun->adet }} ₺</td>
+                        <td>{{ $siparis->durum }}</td>
                     </tr>
                 @endforeach
+
                 <tr>
                     <th colspan="4" class="text-right">Toplam Tutar</th>
                     <td colspan="2">{{ $siparis->siparis_tutari }} ₺</td>
@@ -45,6 +46,7 @@
                     <th colspan="4" class="text-right">Sipariş Durumu</th>
                     <td colspan="2">{{ $siparis->durum }}</td>
                 </tr>
+
             </table>
         </div>
     </div>

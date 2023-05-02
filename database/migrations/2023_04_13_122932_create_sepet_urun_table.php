@@ -18,7 +18,7 @@ class CreateSepetUrunTable extends Migration
             $table->integer('sepet_id')->unsigned();
             $table->integer('urun_id')->unsigned();
             $table->integer('adet');
-            $table->decimal('fiyat', 5, 2);
+            $table->decimal('fiyat', 6, 3);
             $table->string('durum', 30);
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP')); //create date ve update date
